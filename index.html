@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="sample"></div>
+<button id="nice" onclick="Do()">Click on me bro</button>
+
+
+<script>
+            async function FetchHtml() 
+            {
+                let response = await fetch('https://www.npmjs.com/package/scrape-html-web?activeTab=explore');
+                return await response.text(); 
+            }
+    
+    
+            // Usaing the HTML
+            async function Do()
+            {
+                let html = await FetchHtml().then(text => {return text}); 
+                alert(html);
+            }
+    
+        
+</script>
+
+
+</body>
+</html>
